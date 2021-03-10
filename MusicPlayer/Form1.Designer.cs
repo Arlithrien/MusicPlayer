@@ -51,7 +51,7 @@ namespace MusicPlayer
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPanel.Location = new System.Drawing.Point(0, 0);
             this.TopPanel.Name = "TopPanel";
-            this.TopPanel.Size = new System.Drawing.Size(778, 76);
+            this.TopPanel.Size = new System.Drawing.Size(849, 76);
             this.TopPanel.TabIndex = 0;
             // 
             // lvlLogo
@@ -59,7 +59,7 @@ namespace MusicPlayer
             this.lvlLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lvlLogo.AutoSize = true;
             this.lvlLogo.Font = new System.Drawing.Font("Trajan Pro", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlLogo.Location = new System.Drawing.Point(44, 25);
+            this.lvlLogo.Location = new System.Drawing.Point(79, 25);
             this.lvlLogo.Name = "lvlLogo";
             this.lvlLogo.Size = new System.Drawing.Size(220, 36);
             this.lvlLogo.TabIndex = 0;
@@ -88,6 +88,7 @@ namespace MusicPlayer
             this.tracks.Name = "tracks";
             this.tracks.Size = new System.Drawing.Size(348, 238);
             this.tracks.TabIndex = 1;
+            this.tracks.SelectedIndexChanged += new System.EventHandler(this.tracks_SelectedIndexChanged);
             // 
             // btnSelectSongs
             // 
@@ -115,7 +116,7 @@ namespace MusicPlayer
             // 
             this.lblFooter.AutoSize = true;
             this.lblFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblFooter.Location = new System.Drawing.Point(0, 461);
+            this.lblFooter.Location = new System.Drawing.Point(0, 478);
             this.lblFooter.Name = "lblFooter";
             this.lblFooter.Size = new System.Drawing.Size(232, 25);
             this.lblFooter.TabIndex = 4;
@@ -126,7 +127,7 @@ namespace MusicPlayer
             // 
             this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(-195, 5);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(-160, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(704, 66);
             this.flowLayoutPanel1.TabIndex = 2;
@@ -135,7 +136,7 @@ namespace MusicPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 486);
+            this.ClientSize = new System.Drawing.Size(849, 503);
             this.Controls.Add(this.lblFooter);
             this.Controls.Add(this.WindowsMediaPlayer);
             this.Controls.Add(this.btnSelectSongs);
