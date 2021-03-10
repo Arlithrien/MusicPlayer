@@ -12,14 +12,12 @@ namespace MusicPlayer
 {
     public partial class MusicPlayer : Form
     {
-        private string[] files;
-        private string paths;
+        string[] files;
+        string[] paths;
 
         public MusicPlayer()
         {
-            string[] paths;
-            string[] files;
-
+            InitializeComponent();
         }
 
         
@@ -37,15 +35,19 @@ namespace MusicPlayer
         {
             // code to select song
             OpenFileDialog ofd = new OpenFileDialog();
+            // code to select multiple files
+            ofd.Multiselect = true;
+
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 files = ofd.SafeFileNames; // save the names of the tracks in the files array
-                paths = ofd.FileName; // save paths of tracks in path array
+                paths = ofd.FileNames; // save paths of tracks in path array
 
-                //display the music titles in a listbox
+                //display the music titles in the tracks listbox
                 for (int i=0; i< files.Length; i++)
                 {
-                    tracks.Items.Add(files[i]);
+                    tracks.Items.Add(files[i]); // display songs in listbox
+
 
                 }
             }
@@ -59,10 +61,18 @@ namespace MusicPlayer
         private void btnClose_Click(object sender, EventArgs e)
         {
             //closes the application on button click
-            this.Close();
+            Application.Exit();
+            
+            
         }
 
         private void tracks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //code to play music on press
+            WindowsMediaPlayer.URL = paths[tracks.SelectedIndex];
+        }
+
+        private void WindowsMediaPlayer_Enter(object sender, EventArgs e)
         {
 
         }
