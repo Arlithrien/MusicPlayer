@@ -31,13 +31,15 @@ namespace MusicPlayer
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusicPlayer));
             this.TopPanel = new System.Windows.Forms.Panel();
-            this.lvlLogo = new System.Windows.Forms.Label();
+            this.lblLogo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClose = new System.Windows.Forms.Button();
             this.tracks = new System.Windows.Forms.ListBox();
             this.btnSelectSongs = new System.Windows.Forms.Button();
             this.WindowsMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.lblFooter = new System.Windows.Forms.Label();
+            this.toggleNight = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WindowsMediaPlayer)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +47,9 @@ namespace MusicPlayer
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(28)))));
-            this.TopPanel.Controls.Add(this.lvlLogo);
+            this.TopPanel.Controls.Add(this.btnMinimize);
+            this.TopPanel.Controls.Add(this.toggleNight);
+            this.TopPanel.Controls.Add(this.lblLogo);
             this.TopPanel.Controls.Add(this.flowLayoutPanel1);
             this.TopPanel.Controls.Add(this.btnClose);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -55,19 +59,19 @@ namespace MusicPlayer
             this.TopPanel.Size = new System.Drawing.Size(849, 76);
             this.TopPanel.TabIndex = 0;
             // 
-            // lvlLogo
+            // lblLogo
             // 
-            this.lvlLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lvlLogo.AutoSize = true;
-            this.lvlLogo.Font = new System.Drawing.Font("Trajan Pro", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlLogo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lvlLogo.Location = new System.Drawing.Point(12, 18);
-            this.lvlLogo.Name = "lvlLogo";
-            this.lvlLogo.Size = new System.Drawing.Size(379, 61);
-            this.lvlLogo.TabIndex = 0;
-            this.lvlLogo.Text = "Music Player";
-            this.lvlLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lvlLogo.Click += new System.EventHandler(this.label1_Click);
+            this.lblLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLogo.AutoSize = true;
+            this.lblLogo.Font = new System.Drawing.Font("Trajan Pro", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogo.ForeColor = System.Drawing.Color.White;
+            this.lblLogo.Location = new System.Drawing.Point(7, 10);
+            this.lblLogo.Name = "lblLogo";
+            this.lblLogo.Size = new System.Drawing.Size(379, 61);
+            this.lblLogo.TabIndex = 0;
+            this.lblLogo.Text = "Music Player";
+            this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLogo.Click += new System.EventHandler(this.label1_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -81,11 +85,11 @@ namespace MusicPlayer
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Black;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Adobe Gothic Std B", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
             this.btnClose.Location = new System.Drawing.Point(783, 12);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(54, 49);
+            this.btnClose.Size = new System.Drawing.Size(50, 50);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -136,12 +140,39 @@ namespace MusicPlayer
             this.lblFooter.AutoSize = true;
             this.lblFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblFooter.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblFooter.Location = new System.Drawing.Point(0, 478);
+            this.lblFooter.Location = new System.Drawing.Point(0, 483);
             this.lblFooter.Name = "lblFooter";
-            this.lblFooter.Size = new System.Drawing.Size(232, 25);
+            this.lblFooter.Size = new System.Drawing.Size(168, 20);
             this.lblFooter.TabIndex = 4;
             this.lblFooter.Text = "developed by Arlithrien";
             this.lblFooter.Click += new System.EventHandler(this.lblFooter_Click);
+            // 
+            // toggleNight
+            // 
+            this.toggleNight.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.toggleNight.BackColor = System.Drawing.Color.White;
+            this.toggleNight.BackgroundImage = global::MusicPlayer.Properties.Resources.dark_mode;
+            this.toggleNight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.toggleNight.ForeColor = System.Drawing.Color.White;
+            this.toggleNight.Location = new System.Drawing.Point(650, 12);
+            this.toggleNight.Name = "toggleNight";
+            this.toggleNight.Size = new System.Drawing.Size(50, 50);
+            this.toggleNight.TabIndex = 3;
+            this.toggleNight.UseVisualStyleBackColor = false;
+            this.toggleNight.Click += new System.EventHandler(this.toggleNight_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.Black;
+            this.btnMinimize.Font = new System.Drawing.Font("Adobe Gothic Std B", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnMinimize.Location = new System.Drawing.Point(718, 12);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(50, 50);
+            this.btnMinimize.TabIndex = 4;
+            this.btnMinimize.Text = "-";
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // MusicPlayer
             // 
@@ -170,13 +201,15 @@ namespace MusicPlayer
         #endregion
 
         private System.Windows.Forms.Panel TopPanel;
-        private System.Windows.Forms.Label lvlLogo;
+        private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ListBox tracks;
         private System.Windows.Forms.Button btnSelectSongs;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private AxWMPLib.AxWindowsMediaPlayer WindowsMediaPlayer;
         private System.Windows.Forms.Label lblFooter;
+        private System.Windows.Forms.Button toggleNight;
+        private System.Windows.Forms.Button btnMinimize;
     }
 }
 

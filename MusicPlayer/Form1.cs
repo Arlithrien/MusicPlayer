@@ -14,7 +14,7 @@ namespace MusicPlayer
     {
         string[] files;
         string[] paths;
-
+        bool flag = true;
         public MusicPlayer()
         {
             InitializeComponent();
@@ -73,6 +73,40 @@ namespace MusicPlayer
         }
 
         private void WindowsMediaPlayer_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toggleNight_Click(object sender, EventArgs e)
+        {
+            // pressing this button toggles between night mode
+            if (flag == true)
+            {
+                BackColor = Color.White;
+                TopPanel.BackColor = Color.LightGray;
+                lblLogo.ForeColor = Color.Black;
+                tracks.BackColor = Color.White;
+                tracks.ForeColor = Color.Black;
+                btnSelectSongs.BackColor = Color.White;
+                btnSelectSongs.ForeColor = Color.Black;
+
+                flag = false;
+            }
+            else
+            {
+                BackColor = Color.FromArgb(47, 55, 74);
+                TopPanel.BackColor = Color.Black;
+                lblLogo.ForeColor = Color.White;
+                tracks.BackColor = Color.Black;
+                tracks.ForeColor = Color.White;
+                btnSelectSongs.BackColor = Color.Black;
+                btnSelectSongs.ForeColor = Color.White;
+                flag = true;
+            }
+
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
         {
 
         }
