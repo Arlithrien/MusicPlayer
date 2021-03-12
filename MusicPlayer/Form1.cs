@@ -15,6 +15,7 @@ namespace MusicPlayer
         string[] files;
         string[] paths;
         bool flag = true;
+        bool minimized = false;
         public MusicPlayer()
         {
             InitializeComponent();
@@ -108,6 +109,22 @@ namespace MusicPlayer
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            if (minimized == false)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                minimized = true;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                minimized = false;
+            }
+            
 
         }
     }

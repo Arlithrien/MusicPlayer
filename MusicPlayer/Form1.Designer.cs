@@ -40,6 +40,7 @@ namespace MusicPlayer
             this.lblFooter = new System.Windows.Forms.Label();
             this.toggleNight = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnMin = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WindowsMediaPlayer)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +48,7 @@ namespace MusicPlayer
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(28)))));
+            this.TopPanel.Controls.Add(this.btnMin);
             this.TopPanel.Controls.Add(this.btnMinimize);
             this.TopPanel.Controls.Add(this.toggleNight);
             this.TopPanel.Controls.Add(this.lblLogo);
@@ -154,7 +156,7 @@ namespace MusicPlayer
             this.toggleNight.BackgroundImage = global::MusicPlayer.Properties.Resources.dark_mode;
             this.toggleNight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toggleNight.ForeColor = System.Drawing.Color.White;
-            this.toggleNight.Location = new System.Drawing.Point(650, 12);
+            this.toggleNight.Location = new System.Drawing.Point(615, 12);
             this.toggleNight.Name = "toggleNight";
             this.toggleNight.Size = new System.Drawing.Size(50, 50);
             this.toggleNight.TabIndex = 3;
@@ -166,13 +168,27 @@ namespace MusicPlayer
             this.btnMinimize.BackColor = System.Drawing.Color.Black;
             this.btnMinimize.Font = new System.Drawing.Font("Adobe Gothic Std B", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnMinimize.Location = new System.Drawing.Point(718, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(671, 12);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(50, 50);
             this.btnMinimize.TabIndex = 4;
             this.btnMinimize.Text = "-";
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnMin
+            // 
+            this.btnMin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnMin.BackColor = System.Drawing.Color.White;
+            this.btnMin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMin.BackgroundImage")));
+            this.btnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMin.ForeColor = System.Drawing.Color.White;
+            this.btnMin.Location = new System.Drawing.Point(727, 12);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(50, 50);
+            this.btnMin.TabIndex = 5;
+            this.btnMin.UseVisualStyleBackColor = false;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
             // 
             // MusicPlayer
             // 
@@ -210,6 +226,7 @@ namespace MusicPlayer
         private System.Windows.Forms.Label lblFooter;
         private System.Windows.Forms.Button toggleNight;
         private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Button btnMin;
     }
 }
 
